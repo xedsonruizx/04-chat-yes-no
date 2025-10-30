@@ -40,12 +40,11 @@
   const message = ref('')
 
   const emits = defineEmits<{
-   sendMessage: [text: string];
+    (e: 'sendMessage', message: string): void
   }>()
 
   const sendMessage = ()=>{
-      if(!message.value) return;
-      emits('sendMessage', message.value)
-      console.log('Emit active')
+    emits('sendMessage', message.value);
+    message.value = ''
   }
 </script>
