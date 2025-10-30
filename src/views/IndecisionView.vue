@@ -10,7 +10,7 @@
    <!-- Messages -->
     <ChatMessages :messages="messages" />
     <!-- box -->
-    <MessageBox />
+    <MessageBox @sendMessage="onMessage" />
 
    
   </div>
@@ -25,16 +25,24 @@ import { ref } from 'vue';
 import ChatMessages from '@/components/Chat/ChatMessages.vue';
 const messages = ref<ChatMessage[]>([
   {
-    id: 1,
+    id: new Date().getTime(),
     text: "Hey, how's your day going?",
     itsMine: true,
   },
   {
-    id: 2,
+    id: new Date().getTime(),
     text: "Not too bad, just a bit busy. How about you?",
     itsMine: false,
     image: 'https://yesno.wtf/assets/no/20-56c4b19517aa69c8f7081939198341a4.gif',
   },
 ]);
+
+const onMessage = (text: string) => {
+  messages.value.push({
+    id: new Date().getTime(),
+    text,
+    itsMine: true,
+  });
+}
 
 </script>
