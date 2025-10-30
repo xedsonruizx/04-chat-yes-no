@@ -7,12 +7,12 @@ export const useChat = () => {
     const messages = ref<ChatMessage[]>([
         {
             id: new Date().getTime(),
-            text: "Hey, how's your day going?",
+            text: "Hey, como va tu dia?",
             itsMine: true,
         },
         {
             id: new Date().getTime(),
-            text: "Not too bad, just a bit busy. How about you?",
+            text: "Nada mal, solo algo ocupado",
             itsMine: false,
             image: 'https://yesno.wtf/assets/no/20-56c4b19517aa69c8f7081939198341a4.gif',
         },
