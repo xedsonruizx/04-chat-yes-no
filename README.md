@@ -1,6 +1,21 @@
 # .
+Esta seccion consta de las siguientes partes asociadas a testing con VTEST:
 
-This template should help get you started developing with Vue 3 in Vite.
+- Configuraciones manuales
+- TypeScript en pruebas automáticas
+- Vitest: Expect, Spies y `vi.fn`
+- Wrappers y Mounts
+- Virtual View Model
+- Matchers como `expect.any`
+- Peticiones HTTP en testing
+- Fakes de APIs nativas (por ejemplo, `fetch`)
+- Cobertura (Coverage)
+- Y mucho más
+
+La idea es ir construyendo, paso a paso, un repertorio de pruebas
+que nos permita validar con confianza todo nuestro código.
+
+
 
 ## Recommended IDE Setup
 
