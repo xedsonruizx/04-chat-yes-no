@@ -1,11 +1,11 @@
 <template>
     <section>
-        <h3>Counter {{counter}}</h3>
-        <h3>Square {{square}}</h3>
+        <h3 data-testid="counter-value">Counter {{counter}}</h3>
+        <h3 data-testid="square-value">Square {{square}}</h3>
        
         <div>
-            <button class="btn" @click="counter++">Add +</button>
-            <button class="btn" @click="counter--">Subtract -</button>
+            <button data-testid="increment-button" class="btn" @click="counter++">Add +</button>
+            <button data-testid="decrement-button" class="btn" @click="counter--">Subtract -</button>
         </div>
 
     </section> 

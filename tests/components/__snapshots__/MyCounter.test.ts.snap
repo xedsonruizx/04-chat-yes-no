@@ -1,0 +1,9 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`<MyCounter /> > should match snapshot 1`] = `
+"<section>
+  <h3 data-testid="counter-value">Counter 5</h3>
+  <h3 data-testid="square-value">Square 25</h3>
+  <div><button data-testid="increment-button" class="btn">Add +</button><button data-testid="decrement-button" class="btn">Subtract -</button></div>
+</section>"
+`;
