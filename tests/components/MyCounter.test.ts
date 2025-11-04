@@ -16,7 +16,7 @@ describe("<MyCounter />", () => {
         const wrapper = mount(MyCounter,{
             props:{ value: 7 }
         }); 
-        console.log(wrapper.html());
+        // console.log(wrapper.html());
         expect(wrapper.find('[data-testid="counter-value"]').text()).toBe('Counter 7');
     })
 
@@ -28,7 +28,7 @@ describe("<MyCounter />", () => {
         const wrapper = mount(MyCounter,{
             props:{ value: value }
         }); 
-        console.log(wrapper.html());
+        // console.log(wrapper.html());
         // expect(wrapper.find('[data-testid="square-value"]').text()).toContain(`Square ${20*20}`);
 
 
