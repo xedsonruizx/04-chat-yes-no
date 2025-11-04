@@ -44,6 +44,7 @@
   }>()
 
   const sendMessage = ()=>{
+    if (!message.value.trim()) return;
     emits('sendMessage', message.value);
     message.value = ''
   }

@@ -26,4 +26,35 @@ describe("<MessageBox />", () => {
          expect((wrapper.vm as any).message).toBe('');
 
     });
+
+
+
+    test("emits event when keypress.enter is triggered with message", async () => {
+
+        const message = "Hello, World!?";
+        const input = wrapper.find("input")
+        await input.setValue(message);
+        await input.trigger("keypress.enter");  
+
+        // console.log(wrapper.emitted('SendMessage'));
+
+        expect(wrapper.emitted('sendMessage')?.[0]).toEqual([message]);
+         expect((wrapper.vm as any).message).toBe('');
+
+    });
+
+
+
+    test("emits event when keypress.enter is triggered without message", async () => {
+
+        const wrapper = mount(MessageBox);
+        const input = wrapper.find("input")
+        await input.trigger("keypress.enter");  
+        await wrapper.find("button").trigger("click");
+
+        expect(wrapper.emitted('sendMessage')).toBeFalsy();
+
+    });
+
+
 });
