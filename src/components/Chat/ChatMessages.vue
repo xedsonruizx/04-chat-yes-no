@@ -8,8 +8,6 @@
     </div>
 </template>
 
-
-
 <script setup lang="ts">
     import { ChatMessage } from '@/interfaces/chat-message.interface';
     import ChatBubble from './ChatBubble.vue';
@@ -19,22 +17,18 @@
       messages: ChatMessage[];
     }
 
-    const { messages } = defineProps<Props>();
+    const Props = defineProps<Props>();
 
     const chatRef = ref<HTMLDivElement | null>(null);
 
-    watch(
-      () => messages.length,
-      async () => {
-        await nextTick();
-        const el = chatRef.value;
-        if (!el) return;
-        el.scrollTo({
-          top: el.scrollHeight,
+    watch(() => Props.messages.length, async () => {
+      await nextTick();
+      setTimeout(() => {
+        chatRef.value?.scrollTo({
+          top: chatRef.value?.scrollHeight ?? 0,
           behavior: 'smooth'
         });
-      },
-      { flush: 'post' }
-    );
+      }, 100);
+    });
 </script>
 
